@@ -30,6 +30,7 @@ const eventFire = (riveEvent) => {
 	const eventName = eventData.name;
 	const eventProperties = eventData.properties;
 
+	console.log(eventName);
 	const eventKey = eventName;
 	switch (eventKey) {
 		case "OnHoverEnter":
@@ -43,3 +44,5 @@ const eventFire = (riveEvent) => {
 			break;
 	}
 };
+// Register the event handler
+riveInstance.on(rive.EventType.RiveEvent, eventFire);
