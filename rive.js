@@ -30,7 +30,6 @@ const eventFire = (riveEvent) => {
 	const eventName = eventData.name;
 	const eventProperties = eventData.properties;
 
-	console.log(eventName);
 	const eventKey = eventName;
 	switch (eventKey) {
 		case "OnHoverEnter":
@@ -39,8 +38,14 @@ const eventFire = (riveEvent) => {
 		case "OnHoverExit":
 			document.body.style.cursor = "auto";
 			break;
+		case "face":
+		case "hair":
+		case "skin":
+			console.log(eventProperties.item);
+
+			break;
 		default:
-			console.log("Unhandled event:", eventName, "\n", riveEvent);
+			console.log("Unhandled event:", eventName, "\n", eventProperties);
 			break;
 	}
 };
