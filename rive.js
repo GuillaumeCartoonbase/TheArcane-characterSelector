@@ -41,7 +41,8 @@ const eventFire = (riveEvent) => {
 		case "face":
 		case "hair":
 		case "skin":
-			console.log(eventProperties.item);
+		case "hair color":
+			console.log(eventKey + " : " + eventProperties.item);
 
 			break;
 		default:
