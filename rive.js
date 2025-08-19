@@ -1,7 +1,7 @@
-hair = 0;
-hairColor = 0;
-face = 0;
-skin = 0;
+charHair = 0;
+charHairColor = 0;
+charFace = 0;
+charSkin = 0;
 
 const stateMachine = "selector";
 
@@ -23,15 +23,10 @@ function onLoadHandler() {
 	const inputs = riveInstance.stateMachineInputs(stateMachine);
 
 	// Setup inputs
-	hairInput = inputs.find((i) => i.name === "hair");
-	hairColorInput = inputs.find((i) => i.name === "hairColor");
-	faceInput = inputs.find((i) => i.name === "face");
-	skinInput = inputs.find((i) => i.name === "skin");
-
-	hairInput = hair;
-	hairColorInput = hairColor;
-	faceInput = face;
-	skinInput = skin;
+	riveInstance.setNumberStateAtPath("face", charFace, "Avatar");
+	riveInstance.setNumberStateAtPath("skin", charSkin, "Avatar");
+	riveInstance.setNumberStateAtPath("hair", charHair, "Avatar");
+	riveInstance.setNumberStateAtPath("hairColor", charHairColor, "Avatar");
 }
 
 // Resize the drawing surface if the window resizes
