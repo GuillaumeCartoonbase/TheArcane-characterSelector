@@ -1,3 +1,8 @@
+hair = 0;
+hairColor = 0;
+face = 0;
+skin = 0;
+
 const stateMachine = "selector";
 
 const riveInstance = new rive.Rive({
@@ -14,6 +19,19 @@ const riveInstance = new rive.Rive({
 function onLoadHandler() {
 	// Prevent a blurry canvas by using the device pixel ratio
 	riveInstance.resizeDrawingSurfaceToCanvas();
+
+	const inputs = riveInstance.stateMachineInputs(stateMachine);
+
+	// Setup inputs
+	hairInput = inputs.find((i) => i.name === "hair");
+	hairColorInput = inputs.find((i) => i.name === "hairColor");
+	faceInput = inputs.find((i) => i.name === "face");
+	skinInput = inputs.find((i) => i.name === "skin");
+
+	hairInput = hair;
+	hairColorInput = hairColor;
+	faceInput = face;
+	skinInput = skin;
 }
 
 // Resize the drawing surface if the window resizes
